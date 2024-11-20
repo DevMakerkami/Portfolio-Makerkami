@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "2020-2023",
+    title: "Mercadeo y gestor de marcas",
+    company: "Studio Kami",
+    description:
+      "Desarrollo de marcas y gestión de ellas, realizando estudios de mercado y estrategias para campaña de marketing y creación de elementos visuales",
+    
+  },
+  {
+    date: "2018-2020",
+    title: "Asistente Técnico",
+    company: "Netser Group",
+    description:
+      "Asistente técnico y logistico, implementar imagen gráfica del sistema operativo  ",
+      link: "",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

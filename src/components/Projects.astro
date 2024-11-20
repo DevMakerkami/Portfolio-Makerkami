@@ -1,0 +1,133 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Javascript from "./icons/JS.astro"
+import HTML from "./icons/HTML.astro"
+import CSS  from "./icons/CSS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import React from "./icons/React.astro"
+import ExpressJS from "./icons/ExpressJS.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+
+const TAGS = {
+  JS: {
+    name: "Javascript",
+    class: "bg-[#F0DB4F] text-white",
+    icon: Javascript,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+
+  HTML: {
+    name: "HTML",
+    class: "bg-[#ff8000] text-white",
+    icon: HTML
+  },
+
+  CSS: {
+    name: "CSS",
+    class:"bg-[#A020F0] text-white",
+    icon: CSS,
+  },
+
+  React:{
+    name: "React",
+    class: "bg-[#0081A3] text-white",
+    icon: React,
+  },
+
+  ExpressJs:{
+    name:"Express.js",
+    class: "bg-[#808080] text-white",
+    icon: ExpressJS,
+  },
+
+}
+const PROJECTS = [
+  {
+    title: "Mercado Liebre",
+    description:
+      "Plataforma maqueta de a partir de la plataforma de Mercado libre hecho con HTML CSS y JS.",
+    link: "https://mercado-usagi.vercel.app/",
+    github: "https://github.com/DevMakerkami/Mercado-Usagi",
+    image: "../../public/mercado-usagi.png",
+    tags: [TAGS.HTML, TAGS.CSS],
+  },
+  {
+    title: "digital foodie",
+    description: 
+    "Proyecto final de maquetador web 2019, creación de la marca, maquetación y validaciones",
+    link:"https://digitalfoodie.netlify.app/",
+    github: "https://github.com/EvelyEspinosa/Proyecto-Final",
+    image: "../../public/digital-foodie.png",
+    tags: [TAGS.JS, TAGS.HTML,TAGS.CSS],
+  },
+  {
+    title: "Delichoice",
+    description: 
+    "Proyecto final de Fullstack en este año, creación de eccomerce desde 0, hecho en express ejs, base de datos en mysql y diseño de ",
+    link:"",
+    github: "https://github.com/DevMakerkami/DPFS_aldair_decastro",
+    image: "../../public/digital-foodie.png",
+    tags: [TAGS.JS, TAGS.ExpressJs,TAGS.CSS, TAGS.React],
+  },
+
+
+
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Rarete" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>

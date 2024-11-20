@@ -1,0 +1,63 @@
+---
+const personalImageAlt = "Makerkami"
+import WhatsappIcon from "@/components/icons/Whatsapp.astro"
+import CVIcon from "@/components/icons/CV.astro"
+import Badge from "@/components/Badge.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import SocialPill from "@/components/SocialPill.astro"
+import GitHubIcon from "@/components/icons/GitHub.astro"
+import GitHub from "./icons/GitHub.astro"
+---
+
+<div class="max-w-xl">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="../../public/makerkami.png"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://linkedin.com/in/midudev"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+  Hola, soy Aldair 
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-purple-200 [&>strong]:text-purple-500 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <strong
+      > Desarrollador Web Jr. y Especialista en Marketing Digital,</strong
+    > con experiencia en desarrollo Full-Stack y soluciones digitales innovadoras;Originario de Colón, Panamá 🇵🇦.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:aadkstro@gmail.com">
+      <MailIcon class="size-4" />
+      Contáctame
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/aadkstro/">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/DevMakerkami">
+        <GitHubIcon class="size-6 " />
+        GitHub
+      </SocialPill>
+    <SocialPill href="https://wa.me/+50766073184">
+        <WhatsappIcon class="size-6 " />
+        Whatsapp
+      </SocialPill>
+    <SocialPill href="../../public/CV.pdf" download="CV.Pdf">
+        <CVIcon class="size-6 " />
+        Currículum
+      </SocialPill>
+  </nav>
+</div>
